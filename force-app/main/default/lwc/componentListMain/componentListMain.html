@@ -1,4 +1,26 @@
 <template>
-    <div class="slds-tabs_default">
+    <c-component-list-header></c-component-list-header>
+    <c-component-list-filter onfilterchange={handleFilterChange}></c-component-list-filter>
+    
+    <div>
+        <c-component-list-table
+            data={data}
+            columns={columns}
+            onrowselect={handleRowSelect}
+            onrowaction={handleRowAction}
+        ></c-component-list-table>
+
+        <c-component-list-tile
+            data={data}
+            ontileselect={handleTileSelect}
+            ontileaction={handleTileAction}
+        ></c-component-list-tile>
     </div>
+
+    <c-component-list-modal onmodalaction={handleModalAction}></c-component-list-modal>
+    
+    <c-component-list-data ondataload={handleDataLoad}></c-component-list-data>
+    
+    <c-component-list-action onaction={handleAction}></c-component-list-action>
+
 </template>
